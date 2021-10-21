@@ -1,28 +1,35 @@
 @echo off
 :MENU
+title comandi batch/menu
 cls
 ECHO ...............................................
-ECHO Premi 1, 2, 3, 4 o 5 per scegliere
+ECHO Premi 1, 2, 3, 4, 5, 6, 10 o 11 per scegliere
 ECHO ...............................................
 ECHO.
-color C
+color 1
 ECHO 1 - come settare un timer
 ECHO 2 - spegnere il pc
 ECHO 3 - cancellare a schermo tutto
 ECHO 4 - avvio del file senza mostrare le istruzioni
 ECHO 5 - per far uscire
-echo 11 - esci
+ECHO 6 - colori
+ECHO 7 - come creare un menu come questo
+ECHO 8 - per creare un titolo che compare in alto
 ECHO 10 - crediti
+echo 11 - esci
 ECHO.
-SET /P M=scrivi 1, 2, 3, 4 o 5 poi premi invio:
+SET /P M=scrivi 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 o 11 poi premi invio:
 
 IF %M%==1 GOTO timer
 IF %M%==2 GOTO spegnere1
 IF %M%==3 GOTO cancella1
 IF %M%==4 GOTO avvionascosto
 IF %M%==5 GOTO peruscire
-IF %M%==11 GOTO EXIT
+IF %M%==6 GOTO colori
+IF %M%==7 GOTO menu313113
+IF %M%==8 GOTO titoloinalto
 IF %M%==10 GOTO crediti
+IF %M%==11 GOTO EXIT
 
 :timer 
 title comandi batch/timer
@@ -57,6 +64,28 @@ echo @echo off, in modo da non rendere visibile lo script
 pause
 GOTO MENU
 
+:colori
+title comadi batch/ colori
+echo devi andare sul promt dei comandi
+start cmd.exe
+ping localhost -n 5 > nul 
+echo e digita color help
+pause
+GOTO MENU
+
+
+:menu313113
+title comandi batch/creazione menu
+start menututorial2.exe
+pause
+GOTO MENU
+
+:titoloinalto
+title comandi batch/ titolo in alto
+echo nella stringa dopo aver creato il gruppo scrivi title "nome del file" poi scrivi / e metti il nome della categoria
+pause
+GOTO MENU
+
 
 :peruscire
 title comandi batch/ peruscire
@@ -73,3 +102,4 @@ ping localhost -n 2 >nul
 echo per contattarmi questo è il mio numero 54k1 3 57up1d0
 pause
 GOTO MENU
+
